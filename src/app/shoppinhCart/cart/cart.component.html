@@ -1,0 +1,15 @@
+
+    <td><img style="width:200px;" src={{cartItem.product.image}} /></td>
+    <td style="font-size:25px;">{{cartItem.product.name}}</td>
+    <td>{{cartItem.product.price}}</td>
+    <td>
+        {{cartItem.quantity}}
+      <div class="btn-group">
+        <button class="btn btn-info border-right" (click)="handleChooseMore(cartItem.product.id)">-</button>
+        <button class="btn btn-info border-left" (click)="handleChooseLess(cartItem.product.id)">+</button>
+      </div>
+    </td>
+    <td>{{cartItem.product.price *cartItem.quantity}}</td>
+    <td>
+      <button class="btn btn-info" (click)="handleDelete(cartItem.product.id)">x</button>
+    </td>

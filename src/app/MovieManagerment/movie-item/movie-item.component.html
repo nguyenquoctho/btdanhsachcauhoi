@@ -1,0 +1,9 @@
+<div class="card p-2 mb-3">
+    <img src={{movie.image}} >
+    <p class="lead">{{movie.name}}</p>
+    <p>Mo ta: {{movie.discription}} </p>
+    <div class="d-flex justify-content">
+        <button mat-flat-button color="accent" (click)="handleDeleteMovie()">xoa</button>
+        <button mat-flat-button color="warn">Warn</button>
+    </div>
+</div>

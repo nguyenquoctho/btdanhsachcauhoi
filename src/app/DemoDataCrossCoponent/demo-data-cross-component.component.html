@@ -1,0 +1,43 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h2>DSSV</h2>
+            <div class="row">
+                <div class="col-4" *ngFor="let item of studentArr" >
+                    <app-student-item [studentItem]="item" (studentEmiter)="handleOutputStudent($event)"></app-student-item>
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-4">
+            <h2>Sinh vien duoc chon</h2>
+            <p class="lead">
+                Ten sinh vien:{{chosenStudent?.name}}
+            </p>
+            <p class="lead">
+                Tuoi:{{chosenStudent?.age}}
+            </p>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h2>danh sach ghe</h2>
+      <div class="row">
+        <app-student-item
+          *ngFor="let item of seatArr"
+          (studentEmiter)="handleChoseSeat($event)"
+          [seatItem]="item"
+        ></app-student-item>
+      </div>
+    </div>
+    <div class="col-4">
+      <h2>danh sach ghe da dat</h2>
+      <p *ngFor="let item of chosenSeatArr" class="lead">
+        Ghe: {{ item?.SoGhe }} Gia: {{ item?.Gia }}
+        <button class="btn btn-danger" (click)="moveSeat(item)">Huy</button>
+      </p>
+    </div>
+  </div>
+</div>

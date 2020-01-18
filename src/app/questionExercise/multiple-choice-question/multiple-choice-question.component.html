@@ -1,0 +1,14 @@
+<h4>Cau {{item._id}}: {{item.content}}</h4>
+<form action="">
+    <div *ngFor="let ans of item.answers">   
+         <input 
+         type="radio"
+           name="age" 
+           value={{ans.content}}
+           (change) = "radioChangeHandler($event)"
+           > {{ans.content}}<br>  
+   </div>
+</form>
+ 
+    
+

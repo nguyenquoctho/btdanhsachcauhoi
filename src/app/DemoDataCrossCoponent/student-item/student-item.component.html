@@ -1,0 +1,17 @@
+<!-- <div class="card mb-3">
+    <p class="lead">Ten: <span class="text-success">{{studentItem.name}}</span></p>
+    <p class="lead">Tuoi: <span class="text-success">{{studentItem.age}}</span></p>
+    <div class="text-center">
+        <button class="btn btn-success" (click)="handleChooseStudent(studentItem)">Chon</button>
+    </div>
+</div> -->
+
+<button
+  class="btn btn-secondary m-2"
+  [ngClass]="{ trBg1: seatItem.TrangThai , 'btn-success':isChosen}"
+  (click)="handleChosenSeat(seatItem)"
+  style="width: 40px; height: 40px;"
+  [disabled]="seatItem.TrangThai"
+>
+  {{ seatItem.SoGhe }}
+</button>

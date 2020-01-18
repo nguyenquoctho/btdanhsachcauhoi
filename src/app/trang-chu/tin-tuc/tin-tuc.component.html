@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <button [ngClass]="{'btn-success':btnDienAnh}" class="btn mr-2" (click)="ChonLoaiTin('DienAnh')">Dien Anh</button>
+        <button [ngClass]="{'btn-success':btnReview}" class="btn mr-2" (click)="ChonLoaiTin('Review')">Review</button>
+        <button [ngClass]="{'btn-success':btnKhuyenMai}" class="btn" (click)="ChonLoaiTin('KhuyenMai')">Khuyen Mai</button>
+    </div>
+</div>
+<div class="row" [ngSwitch]="loaiTinTuc">
+    <div *ngSwitchCase="'DienAnh'" class="col-12">
+        <app-dien-anh></app-dien-anh>
+    </div>
+
+    <div  *ngSwitchCase="'Review'" class="col-12">
+        <app-review></app-review>
+    </div>
+
+    <div  *ngSwitchCase="'KhuyenMai'" class="col-12">
+        <app-khuyen-mai></app-khuyen-mai>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<!-- <h1 *ngIf="isShowTitle; else elseContent">Cybersoft</h1>
+<ng-template #elseContent>
+    <h1>Cybercore</h1>
+</ng-template>
+<select name="" (change)="handleChangeMonth($event)">
+    <option [value]="stt+1" *ngFor="let item of monthArray; let stt=index">{{item}}</option>
+</select>
+<div class="ml-4" [ngSwitch]="month">
+    <p *ngSwitchCase="1">Thang 1 co 31 ngay</p>
+    <p *ngSwitchCase="2">thang 2 co 29 ngay</p>
+    <p *ngSwitchCase="3">thang 3 co 31 ngay</p>
+    <p *ngSwitchCase="4">thang 4 co 20 ngay</p>
+</div> -->
+
+<!-- Button trigger modal -->
+<!-- <button *ngIf="!isShowTitle;else ndKhac" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+  Launch
+</button>
+<h2 >Cybersoft</h2>
+<ng-template #ndKhac>
+    <h2>Hello world!</h2>
+</ng-template> -->
+<!-- Modal -->
+<!-- <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" #inputName class="form-control" placeholder="user name">
+                </div>
+                <div class="form-group">
+                    <label>password</label>
+                    <input type="password" #inputpassword class="form-control" placeholder="password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="handleSubmit(inputName.value,inputpassword.value)">Save</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="form-group">
+        <label>ma san pham</label>
+        <input type="number" #inputMaSP class="form-control" placeholder="ma san pham">
+    </div>
+    <div class="form-group">
+        <label>ten san pham</label>
+        <input type="text" #inputTEnSP class="form-control" placeholder="ten san pham">
+    </div>
+    <div class="form-group">
+        <label>gia</label>
+        <input type="number" #inputGia class="form-control" placeholder="gia">
+    </div>
+    <button class="btn btn-success" (click)="themSP(inputMaSP.value,inputTEnSP.value,inputGia.value)">Them</button>
+    <table class="table">
+        <thead style="background-color: #6666;">
+            <tr>
+                <th [ngStyle]="{'width':tdWidth +'px'}">STT</th>
+                <th>ma</th>
+                <th>ten</th>
+                <th>gia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr [ngClass]="{'trBg':stt%2!==0}" *ngFor="let item of ProdLidt | paginate: { itemsPerPage: 5, currentPage: p }; let stt=index ">
+               <td>{{stt}}</td>
+               <td>{{item.MaSP}}</td>
+               <td>{{item.TenSP}}</td>
+               <td>{{item.Gia}}</td>
+               <td>
+                   <button class="btn btn-danger"(click)="xoaPD(item)">Xoa</button>
+               </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="handleChangePage($event)"></pagination-controls>
+</div>
+
+<ng-content></ng-content>
+<!-- props.children -->

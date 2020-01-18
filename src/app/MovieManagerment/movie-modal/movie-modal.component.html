@@ -1,0 +1,32 @@
+
+  <!-- Modal -->
+  <div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Movie Management</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <mat-form-field class="example-full-width">
+            <input matInput #nameInput placeholder="Name" value="">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput #imageInput placeholder="Image" value="">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput #descriptionInput  placeholder="Description" value="">
+          </mat-form-field>
+        </div>
+        <div class="modal-footer">
+        
+          <button mat-flat-button color="primary"  data-dismiss="modal">Close</button>
+          <button mat-flat-button color="accent" type="button" (click) = "handleSave(nameInput.value,imageInput.value,descriptionInput.value)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

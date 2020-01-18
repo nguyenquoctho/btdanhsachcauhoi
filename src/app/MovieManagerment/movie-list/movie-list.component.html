@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4 text-center d-flex justify-content-between">
+                Danh Sach Phim
+                <button mat-fab color="primary"  data-toggle="modal" data-target="#movieModal"> <mat-icon>add</mat-icon></button>
+                <button mat-fab color="primary" (click)="changeStatus()"> <mat-icon>change</mat-icon></button>
+            </h1>
+           
+            <span>Status: {{status}}</span>
+            
+        </div>
+        <div *ngFor="let item of movieList" class="col-4">
+            <app-movie-item [movie] ="item"></app-movie-item>
+        </div>
+       
+    </div>
+</div>
+<app-movie-modal></app-movie-modal>

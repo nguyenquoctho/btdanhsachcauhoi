@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">  <h2 class="text-center">Danh sach cau hoi</h2></div>
+        <div *ngIf = "hienThiKetQua"  class="col-6">Ket Qua: {{tinhDiem}} diem </div>
+    </div>
+  
+    <div class="row" *ngFor="let item of QuestionMultipleChoice">
+        <app-multiple-choice-question (AnsMultipleEmiter) = "handleSendAnser($event)" [item] = "item"></app-multiple-choice-question>
+    </div>
+    <div class="row" *ngFor="let item of QuestionItem">
+        <app-question-item (AnsEmiter)="handleSendAnser($event)" [item]="item"></app-question-item>
+    </div>
+    <div class="text-center">
+        <button (click)="handleSubmit()" class="btn btn-success">Submit</button>
+    </div>
+</div>
+
